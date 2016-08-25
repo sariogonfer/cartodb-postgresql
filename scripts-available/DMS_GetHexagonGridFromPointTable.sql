@@ -25,7 +25,7 @@ BEGIN
 
 	b := abs(co % 2) = 1;
 
-	SRID := Find_SRID(schema_name, table_name, geom_column);
+	SRID := Find_SRID(schema_name, table_name, column_name);
 	hex := array_append(hex, ST_SetSRID(CDB_MakeHexagon(ST_MakePoint( side, (h / 2)), side), SRID));
 	hex := array_append(hex, ST_SetSRID(CDB_MakeHexagon(ST_MakePoint( side, 0), side), SRID));
 
